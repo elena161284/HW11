@@ -1,10 +1,21 @@
-import javax.swing.*;
-
 public class Main {
     public static void main(String[] args) {
-        divideTheYear();
-        installOrUpdate();
-        calculateDeliveryData();
+        System.out.println("Задача 1");
+        int year = 2023;
+        divideTheYear(year);
+
+        System.out.println("Задача 2");
+        int yearOfRelease = 2014;
+        int operatingSystem = 1;
+        installOrUpdate(yearOfRelease, operatingSystem);
+
+        System.out.println("Задача 3");
+        int deliveryDistance = 75;
+        if (calculateDeliveryData(deliveryDistance) != 0) {
+            System.out.println("Потребуется дней для доставки: " + calculateDeliveryData(deliveryDistance));
+        } else {
+            System.out.println("Доставки нет");
+        }
     }
 
     public static void divideTheYear(int years) {
@@ -16,13 +27,14 @@ public class Main {
     }
 
     public static void installOrUpdate(int yearOfRelease1, int operatingSystem1) {
-        if (operatingSystem1 == 0 && yearOfRelease1 < 2015) {
+        int yearOfRelease2=2014;
+        if (operatingSystem1 == 0 && yearOfRelease1 < yearOfRelease2) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (operatingSystem1 == 1 && yearOfRelease1 < 2015) {
+        } else if (operatingSystem1 == 1 && yearOfRelease1 < yearOfRelease2) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (operatingSystem1 == 1 && yearOfRelease1 >= 2015) {
+        } else if (operatingSystem1 == 1 && yearOfRelease1 >= yearOfRelease2) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (operatingSystem1 == 0 && yearOfRelease1 >= 2015) {
+        } else if (operatingSystem1 == 0 && yearOfRelease1 >= yearOfRelease2) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
     }
@@ -39,40 +51,4 @@ public class Main {
 
         return deliveryTime;
     }
-
-
-    public static void divideTheYear() {
-        System.out.println("Задача 1");
-        int year = 2023;
-        divideTheYear(year);
-    }
-
-    public static void installOrUpdate() {
-        System.out.println("Задача 2");
-        int yearOfRelease = 2014;
-        int operatingSystem = 1;
-        installOrUpdate(yearOfRelease, operatingSystem);
-    }
-
-    public static void calculateDeliveryData() {
-        System.out.println("Задача 3");
-        int deliveryDistance = 75;
-        if (calculateDeliveryData(deliveryDistance) != 0) {
-            System.out.println("Потребуется дней для доставки: " + calculateDeliveryData(deliveryDistance));
-        } else {
-            System.out.println("Доставки нет");
-        }
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
