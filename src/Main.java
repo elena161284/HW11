@@ -27,30 +27,16 @@ public class Main {
         }
     }
 
-    public static void calculateDeliveryData(int deliveryDistance1) {
-        int time2 = 0;
-        if (deliveryDistance1 <= 20) {
-            time2 += 1;
-            System.out.println(deliveryDistance1 + " км");
-        } else if (deliveryDistance1 > 20 && deliveryDistance1 <= 60) {
-            time2 += 2;
-            System.out.println(deliveryDistance1 + " км");
-        } else if (deliveryDistance1 > 60 && deliveryDistance1 < 100) {
-            time2 += 3;
-            System.out.println(deliveryDistance1 + " км");
-        } else {
-            System.out.println("Доставки нет");
-        }
-    }
-
-
-    public static int deliveryTime(int time2) {
+    public static int calculateDeliveryData(int deliveryDistance1) {
         int deliveryTime = 0;
-        time2 += 1;
-        time2 += 2;
-        time2 += 3;
+        if (deliveryDistance1 <= 20) {
+            deliveryTime++;
+        } else if (deliveryDistance1 <= 60) {
+            deliveryTime = deliveryTime + 2;
+        } else if (deliveryDistance1 <= 100) {
+            deliveryTime = deliveryTime + 3;
+        }
 
-        System.out.println("Всего дней доставки " + time2);
         return deliveryTime;
     }
 
@@ -70,14 +56,15 @@ public class Main {
 
     public static void calculateDeliveryData() {
         System.out.println("Задача 3");
-        int time = 0;
-        int deliveryDistance = 20;
-        calculateDeliveryData(deliveryDistance);
-
-
-        deliveryTime(time);
+        int deliveryDistance = 75;
+        if (calculateDeliveryData(deliveryDistance) != 0) {
+            System.out.println("Потребуется дней для доставки: " + calculateDeliveryData(deliveryDistance));
+        } else {
+            System.out.println("Доставки нет");
+        }
     }
 }
+
 
 
 
